@@ -11,7 +11,15 @@ from .translation import Translation
 
 class BotClient(Client):
 
-    def __init__(self):
+    def __init__(self):  # Corrected to __init__ method
+        super().__init__(  # Initialize the base class
+            name='X-URL-Uploader',
+            api_id=Config.APP_ID,
+            api_hash=Config.API_HASH,
+            bot_token=Config.BOT_TOKEN,
+            plugins={'root': 'Bot.plugins'},
+            parse_mode=enums.ParseMode.HTML
+        )
         self.sleep = asyncio.sleep
         self.session: ClientSession = None
         self.config = Config
@@ -20,22 +28,14 @@ class BotClient(Client):
             self.config.DATABASE_URL) if self.config.DATABASE_URL else None
         self.custom_thumbnail = {}
         self.custom_caption = {}
-        self.bot: Client = Client(
-            name='X-URL-Uploader',
-            api_id=self.config.APP_ID,
-            api_hash=self.config.API_HASH,
-            bot_token=self.config.BOT_TOKEN,
-            plugins={'root': 'Bot.plugins'},
-            parse_mode=enums.ParseMode.HTML
-        )
 
     async def startup(self):
-        await self.bot.start()
+        await self.start()  # Corrected to use the instance method of the base class
 
     @property
     def logger(self) -> logging.Logger:
         module = inspect.getmodule(inspect.stack()[1][0])
-        module_name = module.__name__ if module else '__main__'
+        module_name = module.__name__ if module else 'main'  # Use __name__ for module name
         return logging.getLogger(module_name)
 
 
