@@ -17,12 +17,12 @@ class Config(object):
         BotCommand('broadcast', 'broadcast message')
     ]
 
-    DUMP_ID = int(os.environ.get("DUMP_ID", 0))
+    DUMP_ID = int(os.environ.get("DUMP_ID", 1002126077490))
 
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6389847251:AAHQ7RGpWsU6Lgssb2MdieH1K48wDaceCD8")
 
-    APP_ID = int(os.environ.get("APP_ID", 12345))
-    API_HASH = os.environ.get("API_HASH")
+    APP_ID = int(os.environ.get("APP_ID", 18156248))
+    API_HASH = os.environ.get("db946fb6805b1a698c679626b617e77a")
 
     # Authorized User IDS
     AUTH_USERS = [int(id) for id in os.environ.get(
