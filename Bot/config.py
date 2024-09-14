@@ -17,18 +17,18 @@ class Config(object):
         BotCommand('broadcast', 'broadcast message')
     ]
 
-    DUMP_ID = int(os.environ.get("DUMP_ID", 1002126077490))
+    DUMP_ID = int(os.environ.get("DUMP_ID", "1002126077490"))
 
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
-    APP_ID = int(os.environ.get("APP_ID", 18156248))
+    APP_ID = int(os.environ.get("APP_ID", "18156248"))
     API_HASH = os.environ.get("db946fb6805b1a698c679626b617e77a")
 
     # Authorized User IDS
     AUTH_USERS = [int(id) for id in os.environ.get(
         "AUTH_USERS", "").split()] if os.environ.get("AUTH_USERS", None) else None
 
-    OWNER_ID = int(os.environ.get('2032347579'))
+    OWNER_ID = int(os.environ.get("2032347579"))
 
     # MongoDB
     DATABASE_URL = os.environ.get("mongodb+srv://uploaderbot:uploaderbot@cluster0.koh1t.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
