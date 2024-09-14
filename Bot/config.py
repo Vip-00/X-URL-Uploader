@@ -19,7 +19,7 @@ class Config(object):
 
     DUMP_ID = int(os.environ.get("DUMP_ID", 1002126077490))
 
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6389847251:AAHQ7RGpWsU6Lgssb2MdieH1K48wDaceCD8")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
     APP_ID = int(os.environ.get("APP_ID", 18156248))
     API_HASH = os.environ.get("db946fb6805b1a698c679626b617e77a")
