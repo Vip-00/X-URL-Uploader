@@ -28,7 +28,12 @@ class Config(object):
     AUTH_USERS = [int(id) for id in os.environ.get(
         "AUTH_USERS", "").split()] if os.environ.get("AUTH_USERS", None) else None
 
-    OWNER_ID = int(os.environ.get("2032347579"))
+    import os
+
+class Config(object):
+    # Use a descriptive environment variable name
+    OWNER_ID = int(os.environ.get('OWNER_ID', '0'))  # '0' is a default fallback
+
 
     # MongoDB
     DATABASE_URL = os.environ.get("mongodb+srv://uploaderbot:uploaderbot@cluster0.koh1t.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
